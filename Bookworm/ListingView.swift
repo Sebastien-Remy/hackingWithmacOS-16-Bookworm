@@ -20,10 +20,15 @@ struct ListingView: View {
             Text(review.reviewTitle)
                 .tag(review)
         }
+//        .onDeleteCommand(perform: deleteSelected) // isn't called here Known bug that Apple are working to fix
+        .contextMenu {
+            Button("Delete", role: .destructive, action: deleteSelected)
+        }
         .toolbar{
             Button(action: addReview) {
                 Label("Add review", systemImage: "plus")
             }
+            Button(action: deleteSelected, label: { Label("Delete", systemImage: "trash") })
         }
     }
     
@@ -39,6 +44,24 @@ struct ListingView: View {
         dataController.save()
         
         dataController.selectedReview = review
+    }
+    
+    func deleteSelected() {
+        guard let selectedReview = dataController.selectedReview else { return }
+        guard let selectedIndex = reviews.firstIndex(of: selectedReview) else { return }
+        managedObjectContext.delete(selectedReview)
+        dataController.save()
+        
+        if selectedIndex < reviews.count {
+            dataController.selectedReview = reviews [selectedIndex]
+        } else {
+            let previousIndex = selectedIndex - 1
+            if previousIndex >= 0 {
+                dataController.selectedReview = reviews[previousIndex]
+            } else {
+                dataController.selectedReview = nil
+            }
+        }
     }
 }
 
