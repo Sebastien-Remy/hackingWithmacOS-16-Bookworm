@@ -12,6 +12,8 @@ class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "Bookworm") // must match the name in model!
     var saveTask: Task<Void, Error>?
     
+    @Published var selectedReview: Review?
+    
     init() {
         container.loadPersistentStores { descritption, error in
             if let error = error {

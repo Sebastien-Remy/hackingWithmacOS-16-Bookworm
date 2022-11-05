@@ -16,8 +16,9 @@ struct ListingView: View {
     @AppStorage("id") var id = 1
     
     var body: some View {
-        List(reviews) { review in
+        List(reviews, selection: $dataController.selectedReview) { review in
             Text(review.reviewTitle)
+                .tag(review)
         }
         .toolbar{
             Button(action: addReview) {
@@ -36,6 +37,8 @@ struct ListingView: View {
         id += 1
         
         dataController.save()
+        
+        dataController.selectedReview = review
     }
 }
 
