@@ -16,6 +16,7 @@
 		96CC7BBF29167D41003D08B7 /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BBE29167D41003D08B7 /* ListingView.swift */; };
 		96CC7BC129167EDE003D08B7 /* Review-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BC029167EDE003D08B7 /* Review-CoreDataHelpers.swift */; };
 		96CC7BC329168255003D08B7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BC229168255003D08B7 /* DetailView.swift */; };
+		96CC7BC52916B9A5003D08B7 /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BC42916B9A5003D08B7 /* RenderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		96CC7BBE29167D41003D08B7 /* ListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
 		96CC7BC029167EDE003D08B7 /* Review-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		96CC7BC229168255003D08B7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		96CC7BC42916B9A5003D08B7 /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,6 @@
 		96CC7B9E291655D4003D08B7 = {
 			isa = PBXGroup;
 			children = (
-				96CC7BC229168255003D08B7 /* DetailView.swift */,
 				96CC7BA9291655D4003D08B7 /* Bookworm */,
 				96CC7BA8291655D4003D08B7 /* Products */,
 			);
@@ -63,10 +64,12 @@
 		96CC7BA9291655D4003D08B7 /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
+				96CC7BC229168255003D08B7 /* DetailView.swift */,
 				96CC7BB929165657003D08B7 /* Bookworm.xcdatamodeld */,
 				96CC7BBC291660D9003D08B7 /* DataController.swift */,
 				96CC7BAA291655D4003D08B7 /* BookwormApp.swift */,
 				96CC7BBE29167D41003D08B7 /* ListingView.swift */,
+				96CC7BC42916B9A5003D08B7 /* RenderView.swift */,
 				96CC7BC029167EDE003D08B7 /* Review-CoreDataHelpers.swift */,
 				96CC7BAC291655D4003D08B7 /* ContentView.swift */,
 				96CC7BAE291655D7003D08B7 /* Assets.xcassets */,
@@ -160,6 +163,7 @@
 				96CC7BC329168255003D08B7 /* DetailView.swift in Sources */,
 				96CC7BBD291660D9003D08B7 /* DataController.swift in Sources */,
 				96CC7BBB29165657003D08B7 /* Bookworm.xcdatamodeld in Sources */,
+				96CC7BC52916B9A5003D08B7 /* RenderView.swift in Sources */,
 				96CC7BAB291655D4003D08B7 /* BookwormApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

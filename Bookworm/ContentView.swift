@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var dataController: DataController
+    @State private var showingRendered = false
     
     var body: some View {
         NavigationSplitView {
@@ -18,6 +19,7 @@ struct ContentView: View {
         } detail: {
             if let selectedReview = dataController.selectedReview {
                 DetailView(review: selectedReview)
+                    .padding()
             } else {
                 Text("Please select a review")
             }

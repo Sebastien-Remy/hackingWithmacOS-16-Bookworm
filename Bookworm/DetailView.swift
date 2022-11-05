@@ -12,6 +12,8 @@ struct DetailView: View {
     @ObservedObject var review: Review
     @EnvironmentObject var dataController: DataController
     
+    @State private var showingRendered = false
+    
     var body: some View {
         Form {
             TextField("Title", text: $review.reviewTitle)
@@ -32,6 +34,16 @@ struct DetailView: View {
         .onChange(of: review.rating, perform: dataController.enqueueSave)
         .onChange(of: review.reviewText, perform: dataController.enqueueSave)
         .disabled(review.managedObjectContext == nil) // nil when review deleted
+        .toolbar {
+            Button {
+                showingRendered.toggle()
+            } label: {
+                 Label("Show rendered", systemImage: "book")
+            }
+        }
+        .sheet(isPresented: $showingRendered) {
+            RenderView(review: review)
+        }
     }
 }
 
