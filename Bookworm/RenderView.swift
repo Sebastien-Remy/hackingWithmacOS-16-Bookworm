@@ -27,10 +27,10 @@ struct RenderView: View {
                 }
             }
             ScrollView {
-                Text(review.reviewText)
-                    .fontDesign(.serif)
-                    .padding(.vertical)
+                let markdownText: LocalizedStringKey = LocalizedStringKey(stringLiteral: review.reviewText)
+                Text(markdownText)
             }
+  
             Spacer()
                 .frame(height: 50)
             Button("Done") {
